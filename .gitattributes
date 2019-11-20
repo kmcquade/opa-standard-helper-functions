@@ -1,2 +1,3 @@
-*.rb linguist-language=Open Policy Agent
+*.md linguist-language=Open-Policy-Agent
+*.rego linguist-language=Open-Policy-Agent
 Makefile linguist-vendored
