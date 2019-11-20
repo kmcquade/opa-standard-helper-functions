@@ -17,7 +17,7 @@ test_list_contains_value_pass {
 }
 
 test_list_contains_value_false {
-	false ==list_contains_value(sample_list, "biggie")
+	false == list_contains_value(sample_list, "biggie")
 }
 
 test_list_contains_value_not {

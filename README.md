@@ -13,6 +13,7 @@ I only have a few here right now. Will add more later.
 * `list_contains_value`: Determines if a value is present in a list
 * `object_contains_keys`: Determines if an object contains a key
 * `object_contains_key_pattern`: Determines any keys in an object match a regex expression
+* `are_ips_public`: Determines whether any IP addresses fall outside of RFC1918 CIDR ranges (private IPs) 
 
 ## Example
 
