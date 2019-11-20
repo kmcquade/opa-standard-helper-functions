@@ -1,0 +1,2 @@
+*.rb linguist-language=Open Policy Agent
+Makefile linguist-vendored
