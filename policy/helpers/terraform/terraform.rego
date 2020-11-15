@@ -8,6 +8,7 @@ import input as tfplan
 # ---------------------------------------------------------------------------------------------------------------------
 
 # get_resources_by_types_combined
+# TODO: Write tests to see if this works
 get_resources_by_types_combined(tfplan, types) = [ resource |
     resource = get_resources_by_types(tfplan, types)
     resource = get_resources_by_types_submodule(tfplan, types)
