@@ -6,10 +6,10 @@ package helpers.common
 # ---------------------------------------------------------------------------------------------------------------------
 
 sample_list := [
-  "marshall",
-  "mathers",
-  "haley",
-  "kim",
+	"marshall",
+	"mathers",
+	"haley",
+	"kim",
 ]
 
 test_list_contains_value_pass {
@@ -30,23 +30,23 @@ test_list_contains_value_not {
 # ---------------------------------------------------------------------------------------------------------------------
 
 sample_object_for_key_existence := {
-  "luke": "skywalker",
-  "obiwan": "kenobi"
+	"luke": "skywalker",
+	"obiwan": "kenobi",
 }
 
 # Pass example
 test_object_contains_key_pass {
-  object_contains_key(sample_object_for_key_existence, "luke")
+	object_contains_key(sample_object_for_key_existence, "luke")
 }
 
 # False example
 test_object_contains_key_false {
-  object_contains_key(sample_object_for_key_existence, "kylo") == false
+	object_contains_key(sample_object_for_key_existence, "kylo") == false
 }
 
 # Not example
 test_object_contains_key_not {
-  not object_contains_key(sample_object_for_key_existence, "kylo")
+	not object_contains_key(sample_object_for_key_existence, "kylo")
 }
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -55,22 +55,22 @@ test_object_contains_key_not {
 # ---------------------------------------------------------------------------------------------------------------------
 
 sample_object_for_key_pattern_existence := {
-  "logging.#": "1",
-  "logging.2506127480.target_bucket": "somebucket",
-  "logging.2506127480.target_prefix": "log/",
+	"logging.#": "1",
+	"logging.2506127480.target_bucket": "somebucket",
+	"logging.2506127480.target_prefix": "log/",
 }
 
 # Pass example
 test_object_contains_key_pattern_pass {
-		object_contains_key_pattern(sample_object_for_key_pattern_existence, "^logging.*target_bucket$")
+	object_contains_key_pattern(sample_object_for_key_pattern_existence, "^logging.*target_bucket$")
 }
 
 # False example
 test_object_contains_key_pattern_false {
-		false == object_contains_key_pattern(sample_object_for_key_pattern_existence, "^logging.*youngmoney$")
+	false == object_contains_key_pattern(sample_object_for_key_pattern_existence, "^logging.*youngmoney$")
 }
 
 # Not example
 test_object_contains_key_pattern_not {
-		not object_contains_key_pattern(sample_object_for_key_pattern_existence, "^logging.*youngmoney$")
+	not object_contains_key_pattern(sample_object_for_key_pattern_existence, "^logging.*youngmoney$")
 }

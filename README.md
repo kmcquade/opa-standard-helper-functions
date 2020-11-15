@@ -17,3 +17,9 @@ Current functions include ones for Network CIDR analysis and Terraform.
 ## Example Terraform rule: CIDR analysis of security group rules
 
 ...write this
+
+
+## TODO
+
+* Make the Network security group rule for Terraform 0.12 instead of just 0.11
+* Add blog post text

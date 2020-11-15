@@ -1,8 +1,14 @@
-package policy.ec2.overbroad_security_group_rules
+package network.overbroad_network_cidrs
+
+import input as tfplan
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Terraform 0.11
+# ---------------------------------------------------------------------------------------------------------------------
 
 import data.helpers.network.cidr_analysis.are_ips_public
-import data.terraform.get_resources_by_type
-import data.terraform.get_resources_created
+import data.helpers.terraform.get_resources_by_type
+import data.helpers.terraform.get_resources_created
 
 import data.commmon.hash_contains_key_pattern
 import input as tfplan
@@ -17,7 +23,8 @@ security_group_rule_ingress_changes[r] {
 	r := resource
 }
 
-any_security_group_rules_with_illegal_ips[ip] {
+#any_security_group_rules_with_illegal_ips[ip] {
+insecure_resources[ip] {
 	resource := security_group_rule_ingress_changes[_]
 	are_ips_public(cidr_blocks_to_check)
 
@@ -36,9 +43,9 @@ cidr_blocks_to_check[ip] {
 	ip := new_resource[re_match(pattern)]
 }
 
+# This is just for test data
 default authz = false
 
 authz {
-	count(any_security_group_rules_with_illegal_ips) == 0
+	count(insecure_resources) == 0
 }
-

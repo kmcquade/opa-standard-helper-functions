@@ -12,7 +12,7 @@ list_contains_value(list, item) {
 
 else = false {
 	not list[item]
-    not list[item] == false
+	not list[item] == false
 }
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -21,13 +21,13 @@ else = false {
 # ---------------------------------------------------------------------------------------------------------------------
 
 object_contains_key(object, item) {
-    _ = object[key]
-    key = item
+	_ = object[key]
+	key = item
 }
 
 else = false {
 	not object[item]
-    not object[item] == false
+	not object[item] == false
 }
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -41,6 +41,6 @@ object_contains_key_pattern(object, pattern) = key {
 }
 
 else = false {
-  _ = object[a_key]
-  false == re_match(pattern, a_key)
+	_ = object[a_key]
+	false == re_match(pattern, a_key)
 }
