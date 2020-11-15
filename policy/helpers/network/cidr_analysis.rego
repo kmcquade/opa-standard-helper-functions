@@ -1,5 +1,7 @@
-package network
+package helpers.network.cidr_analysis
+import data.helpers.terraform
 
+import input as tfplan
 # ---------------------------------------------------------------------------------------------------------------------
 # are_ips_public
 # Determines whether any IP addresses fall outside of RFC1918 (private CIDR ranges)
