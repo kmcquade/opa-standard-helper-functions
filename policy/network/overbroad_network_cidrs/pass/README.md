@@ -1,0 +1,1 @@
+Passing case for the OPA rule

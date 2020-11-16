@@ -2,7 +2,7 @@ package main
 
 import data.network.overbroad_network_cidrs
 
-standard_error_message(insecure_resources, package_name, error_message) = msg {
+standard_error_message(package_name, error_message, insecure_resources) = msg {
 	msg := sprintf("%s: %s for resources %s.", [package_name, error_message, insecure_resources])
 }
 

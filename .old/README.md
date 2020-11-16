@@ -87,7 +87,7 @@ test_list_contains_value_false {
 
 You run `make test`. And for some reason, it fails!
 
-> ![Failing false case](../images/1-failing-false-case.png)
+> ![Failing false case](images/1-failing-false-case.png)
 
 It turns out that the `not` usage means that OPA will only evaluate to see if the value *is not true* - **it won't actually evaluate to see if it is definitely false**. So, you have to write the function explicitly to allow for `false` responses.
 
@@ -113,5 +113,5 @@ This will allow for the `false` response.
 
 Now when you run `make test` it will look like this:
 
-> ![Passing false case](../images/2-passing-false-case.png)
+> ![Passing false case](images/2-passing-false-case.png)
 

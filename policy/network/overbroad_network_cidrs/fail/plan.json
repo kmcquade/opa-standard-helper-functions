@@ -1,0 +1,258 @@
+{
+  "format_version": "0.1",
+  "terraform_version": "0.13.5",
+  "planned_values": {
+    "root_module": {
+      "resources": [
+        {
+          "address": "aws_security_group.test",
+          "mode": "managed",
+          "type": "aws_security_group",
+          "name": "test",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "schema_version": 1,
+          "values": {
+            "description": "Managed by Terraform",
+            "name_prefix": null,
+            "revoke_rules_on_delete": false,
+            "tags": null,
+            "timeouts": null
+          }
+        },
+        {
+          "address": "aws_security_group_rule.test",
+          "mode": "managed",
+          "type": "aws_security_group_rule",
+          "name": "test",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "schema_version": 2,
+          "values": {
+            "cidr_blocks": [
+              "0.0.0.0/0"
+            ],
+            "description": null,
+            "from_port": 0,
+            "ipv6_cidr_blocks": null,
+            "prefix_list_ids": null,
+            "protocol": "tcp",
+            "self": false,
+            "to_port": 65535,
+            "type": "ingress"
+          }
+        },
+        {
+          "address": "aws_security_group_rule.test2",
+          "mode": "managed",
+          "type": "aws_security_group_rule",
+          "name": "test2",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "schema_version": 2,
+          "values": {
+            "cidr_blocks": [
+              "40.76.4.15/32",
+              "40.112.72.205/32"
+            ],
+            "description": null,
+            "from_port": 0,
+            "ipv6_cidr_blocks": null,
+            "prefix_list_ids": null,
+            "protocol": "tcp",
+            "self": false,
+            "to_port": 65535,
+            "type": "ingress"
+          }
+        }
+      ]
+    }
+  },
+  "resource_changes": [
+    {
+      "address": "aws_security_group.test",
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "test",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "description": "Managed by Terraform",
+          "name_prefix": null,
+          "revoke_rules_on_delete": false,
+          "tags": null,
+          "timeouts": null
+        },
+        "after_unknown": {
+          "arn": true,
+          "egress": true,
+          "id": true,
+          "ingress": true,
+          "name": true,
+          "owner_id": true,
+          "vpc_id": true
+        }
+      }
+    },
+    {
+      "address": "aws_security_group_rule.test",
+      "mode": "managed",
+      "type": "aws_security_group_rule",
+      "name": "test",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "cidr_blocks": [
+            "0.0.0.0/0"
+          ],
+          "description": null,
+          "from_port": 0,
+          "ipv6_cidr_blocks": null,
+          "prefix_list_ids": null,
+          "protocol": "tcp",
+          "self": false,
+          "to_port": 65535,
+          "type": "ingress"
+        },
+        "after_unknown": {
+          "cidr_blocks": [
+            false
+          ],
+          "id": true,
+          "security_group_id": true,
+          "source_security_group_id": true
+        }
+      }
+    },
+    {
+      "address": "aws_security_group_rule.test2",
+      "mode": "managed",
+      "type": "aws_security_group_rule",
+      "name": "test2",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "cidr_blocks": [
+            "40.76.4.15/32",
+            "40.112.72.205/32"
+          ],
+          "description": null,
+          "from_port": 0,
+          "ipv6_cidr_blocks": null,
+          "prefix_list_ids": null,
+          "protocol": "tcp",
+          "self": false,
+          "to_port": 65535,
+          "type": "ingress"
+        },
+        "after_unknown": {
+          "cidr_blocks": [
+            false,
+            false
+          ],
+          "id": true,
+          "security_group_id": true,
+          "source_security_group_id": true
+        }
+      }
+    }
+  ],
+  "configuration": {
+    "provider_config": {
+      "aws": {
+        "name": "aws",
+        "expressions": {
+          "region": {
+            "constant_value": "us-east-1"
+          }
+        }
+      }
+    },
+    "root_module": {
+      "resources": [
+        {
+          "address": "aws_security_group.test",
+          "mode": "managed",
+          "type": "aws_security_group",
+          "name": "test",
+          "provider_config_key": "aws",
+          "schema_version": 1
+        },
+        {
+          "address": "aws_security_group_rule.test",
+          "mode": "managed",
+          "type": "aws_security_group_rule",
+          "name": "test",
+          "provider_config_key": "aws",
+          "expressions": {
+            "cidr_blocks": {
+              "constant_value": [
+                "0.0.0.0/0"
+              ]
+            },
+            "from_port": {
+              "constant_value": 0
+            },
+            "protocol": {
+              "constant_value": "tcp"
+            },
+            "security_group_id": {
+              "references": [
+                "aws_security_group.test"
+              ]
+            },
+            "to_port": {
+              "constant_value": 65535
+            },
+            "type": {
+              "constant_value": "ingress"
+            }
+          },
+          "schema_version": 2
+        },
+        {
+          "address": "aws_security_group_rule.test2",
+          "mode": "managed",
+          "type": "aws_security_group_rule",
+          "name": "test2",
+          "provider_config_key": "aws",
+          "expressions": {
+            "cidr_blocks": {
+              "constant_value": [
+                "40.76.4.15/32",
+                "40.112.72.205/32"
+              ]
+            },
+            "from_port": {
+              "constant_value": 0
+            },
+            "protocol": {
+              "constant_value": "tcp"
+            },
+            "security_group_id": {
+              "references": [
+                "aws_security_group.test"
+              ]
+            },
+            "to_port": {
+              "constant_value": 65535
+            },
+            "type": {
+              "constant_value": "ingress"
+            }
+          },
+          "schema_version": 2
+        }
+      ]
+    }
+  }
+}

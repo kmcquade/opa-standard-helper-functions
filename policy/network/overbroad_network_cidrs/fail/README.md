@@ -1,0 +1,1 @@
+Failing case for the OPA rule
