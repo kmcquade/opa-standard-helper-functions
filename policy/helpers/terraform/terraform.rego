@@ -11,7 +11,7 @@ import input as tfplan
 get_resources_by_types_combined(tfplan, types) = [resource |
 	root_module_resource := get_resources_by_types(tfplan, types)
 	submodule_resource := get_resources_by_types_submodule(tfplan, types)
-	resource := array.concat(root_module_resource[_], submodule_resource[_])
+	resource := {root_module_resource[_], submodule_resource[_]}
 ]
 
 # Get a resource object from a resource in a Terraform plan

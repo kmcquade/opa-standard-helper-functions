@@ -7,6 +7,7 @@ standard_error_message(package_name, error_message, insecure_resources) = msg {
 }
 
 # overbroad security group rule CIDRs
+# Terraform 0.11 only right now
 deny[msg] {
 	insecure_resources := overbroad_network_cidrs.insecure_resources
 	package_name := "network.overbroad_network_cidrs"
